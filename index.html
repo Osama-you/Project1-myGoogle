@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="" />
+        <link rel="stylesheet" href="style.css" />
+        
+        <title>My Google</title>
+    </head>
+    <body >
+        <div id="root" class="size">
+
+            <!-- header start -->    
+            <header class="header">
+                <div class="headerContents">
+                    <div class="leftSide">
+                        <div class="gamilBox">
+                            <a id="gamilLink" href="#">Gmail</a>
+                        </div>
+                        <div></div>
+                        <div class="imagesBox">
+                            <a id="imagesLink" href="#">Images</a>
+                        </div>
+                    </div>
+                    <div class="rightSide">
+                        <div id="googleApp" class="googleAppMenuBox" title="Google apps">
+                            <span class="googleAppMenuIcon"></span>
+                        </div>
+                        <div class="signInBtnBox">
+                            <a id="signInBtn" class="nanClickColor" href="#">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </header> 
+
+            <!-- main start -->   
+            <main class="main" > 
+                <div class="mainContents">
+                    <div class="mainLogoBox" style="height:233px;margin-top:89px">
+                        <img id="mainLogo" alt="Google" height="92" src="resources/images/googlelogo/googlelogo_color_272x92dp.png">
+                    </div>
+                    <div>
+                        <div>
+                            <form id="searchForm" action="" novalidate>
+                                <div class="searchBar noneShadow">
+                                    <div class="searchInputBox">
+                                        <input id="searchInput" 
+                                               maxlength="2048" 
+                                               name="" 
+                                               value="" 
+                                               pellcheck="false" 
+                                               autocomplete="off"
+                                               spellcheck="false"
+                                               type="text" 
+                                               title="Search" 
+                                               value aria-label="Search" 
+                                               />
+                                    </div>
+                                    <div class="voiceSearchBtn" aria-label="Search by voice">
+                                        <span id="voiceSearchIcon"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="btnGroup">
+                                    <input id="googleSearchBtn" 
+                                           value="Google Search" 
+                                           aria-label="Google Search" 
+                                           name="googleSearchBtn" 
+                                           type="submit" 
+                                           />
+                                           
+                                    <input id="feelingLuckyBtn" 
+                                           value="I'm Feeling Lucky" 
+                                           aria-label="I'm Feeling Lucky" 
+                                           name="feelingLuckyBtn" 
+                                           type="submit"
+                                           />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="languageChange" > 
+                                <span id="languageChangeText">Google offered in:</span> 
+                                <a id="theLanguage" href="#">العربية</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </main>
+
+            <!-- footer start --> 
+            <footer class="footer">
+                <div class="locationBar">
+                    <span id="locationName">Palestine</span>
+                </div>
+                <div>                                                                                                       
+                    <span id="footerBarRight" >
+                        <a href="https://www.google.ps/intl/en_ps/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1" style="padding-left: 27px;">Advertising</a>
+                        <a href="https://www.google.ps/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1">Business</a>
+                        <a href="https://www.google.ps/intl/en_ps/about/?utm_source=google-PS&utm_medium=referral&utm_campaign=hp-footer&fg=1">About</a>
+                        <a href="https://google.com/search/howsearchworks/?fg=1">How Search works</a>
+                    </span>
+                    <span id="footerBarLeft">
+                        <a href="https://www.google.ps/intl/en_ps/policies/privacy/?fg=1">Privacy</a>
+                        <a href="https://www.google.ps/intl/en_ps/policies/terms/?fg=1">Terms</a>
+                        <a href="#">Settings</a>
+                    </span>
+                </div>
+            </footer>
+        </div>       
+        <!-- script start -->      
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
