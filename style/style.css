@@ -36,8 +36,7 @@ body{
     text-align: left;
     align-items: center;
     justify-content: flex-end;
-    -webkit-justify-content: flex-end;  
-    
+    -webkit-justify-content: flex-end;    
 }
 
 .headerContents div{    
@@ -69,7 +68,7 @@ body{
 }
 
 .googleAppMenuIcon{
-    background-image: url(./resources/images/icon/i1_1967ca6a.png);
+    background-image: url(../resources/images/icon/i1_1967ca6a.png);
     -webkit-background-size: 528px 68px; 
     background-size: 528px 68px;
     background-position: -132px -38px;
@@ -150,7 +149,7 @@ body{
 }
 
 #voiceSearchIcon{
-    background-image: url(./resources/images/icon/googlemic_color_24dp.png);
+    background-image: url(../resources/images/icon/googlemic_color_24dp.png);
     height: 24px;
     width: 24px;
     background-size: 24px;    
