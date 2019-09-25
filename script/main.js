@@ -56,7 +56,7 @@ const LanguageTxet = {
         feelingLucky: "I'm Feeling Lucky",
         googleOfferedIn: " Google offered in:",// <span id=\"theLanguage\" >11111111</span>",
         anotherLang: "", // the another Language 
-        location: "sdfsdf",
+        location: "",
         advertising: " Advertising",
         business: " Business",
         about: " About",
@@ -74,7 +74,7 @@ const LanguageTxet = {
         feelingLucky: "ضربة حظ",
         googleOfferedIn: " Google offered in:",// <a id=\"theLanguage\" href=\"#\">11111</a>",
         anotherLang: "", // the anather Language 
-        location: "sdfsdf",
+        location: "",
         advertising: "الإعلانات",
         business: "الأعمال",
         about: "حول",
@@ -101,16 +101,18 @@ const getTheLocation = () => {
             },
             lat:  "",
             long: ""
-        };
-                
+        };     
     return theLocation;
 }
 
 // put the Location info in LanguageTxet obj
 const displayTheLocation = () => {// not Done
-    locationName = getTheLocation().locationName;
-    LanguageTxet.en.location = locationName.en;
-    LanguageTxet.ar.location = locationName.ar;
+    let locationName = getTheLocation().locationName;
+    // yetDone
+    let LanguageTxetKeys = Object.keys(LanguageTxet);
+    LanguageTxetKeys.forEach((theLanguage) =>{
+        LanguageTxet[theLanguage].location = locationName[theLanguage];
+    });
 }
 displayTheLocation();
 
@@ -130,13 +132,12 @@ const changeTheLanguage = (newlanguage="") => {
                 else if([4,5].includes(i)){
                     ElementsTxt[i-1].value = value;
                 }else if(i==7){
-                    ElementsTxt[i-1].innerHTML=LanguageTxet[anotherlanguagePage].language_name;
+                    ElementsTxt[i-1].innerHTML = LanguageTxet[anotherlanguagePage].language_name;
                 }else{
-                    ElementsTxt[i-1].innerHTML= value;
+                    ElementsTxt[i-1].innerHTML = value;
                 }
                 i++;
             });
-
         }else{
             console.log("The page language is already '"+ newlanguage +"'");
         }
@@ -146,13 +147,12 @@ const changeTheLanguage = (newlanguage="") => {
 }
 
 // set the initial language Page
-const setlanguagePage = () =>{// not Done
+const setInitLanguagePage = () =>{// not Done
     anotherlanguagePage = "ar";//
     changeTheLanguage("en");
     languagePage = "en";//
-    
 };
-setlanguagePage();
+setInitLanguagePage();
 
 // remove the shadow from the search bar
 const removeShadow = (elements) => {
@@ -173,12 +173,13 @@ const addShadow = (elements) => {
 
 // click on body
 body.addEventListener('click', (event) =>{
+    console.log(event);
     if(!(event.path[1] === searchbar || event.path[2] === searchbar)){// any place on body except search Bar
         searchInputIsclicked=false;
         removeShadow(searchbar)
     }
 });
-  
+
 // click on Search Input
 searchInput.addEventListener('click', (event) =>{
     searchInputIsclicked=true;
@@ -205,7 +206,7 @@ signInBtn.addEventListener('mouseup', (event) =>{
     signInBtn.classList.add('nanClickColor');
 });
 signInBtn.addEventListener('mouseout', (event) =>{
-    signInBtn.classList.remove('ClickColor');
+    signInBtn.classList.remove('ClickColor');   
     signInBtn.classList.add('nanClickColor');
 });
 

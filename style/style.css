@@ -125,17 +125,30 @@ body{
     border: none;
     outline: none;
     padding: 0;
-    margin: -1px 0 0;
+    margin: -2px 0 0;
     color: rgba(0,0,0,.87);
     font: 16px arial,sans-serif;
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
 }
 
+.searchIconContent{
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+    margin-top: -5px;
+}
+
+#searchIcon{
+    height: 20px;
+    width: 20px;
+    margin-top: -1px;
+}
+
 .searchInputBox{
     flex: 1;
     display: flex;
-    padding: 6px 0px 0 20px;
+    padding: 6px 0px 0 14px;
 }
 
 .voiceSearchBtn{
