@@ -64,6 +64,7 @@ const LanguageTxet = {
         privacy: " Privacy",
         terms: " Terms",
         settings: " Settings",
+        position:"right"
     },
     ar: {
         language_name: "العربية",
@@ -82,6 +83,7 @@ const LanguageTxet = {
         privacy: "الخصوصية",
         terms: "البنود",
         settings: "الإعدادات",
+        position:"left"
     }
 };
 
@@ -133,6 +135,8 @@ const changeTheLanguage = (newlanguage="") => {
                     ElementsTxt[i-1].value = value;
                 }else if(i==7){
                     ElementsTxt[i-1].innerHTML = LanguageTxet[anotherlanguagePage].language_name;
+                }else if(i==LanguageTxetValues.length-1){
+                   //
                 }else{
                     ElementsTxt[i-1].innerHTML = value;
                 }
@@ -176,7 +180,7 @@ body.addEventListener('click', (event) =>{
     console.log(event);
     if(!(event.path[1] === searchbar || event.path[2] === searchbar)){// any place on body except search Bar
         searchInputIsclicked=false;
-        removeShadow(searchbar)
+        removeShadow(searchbar);
     }
 });
 
@@ -198,16 +202,16 @@ searchbar.addEventListener('mouseout', (event) =>{
 
 // change colorbtn when mousedown and mouseup
 signInBtn.addEventListener('mousedown', (event) =>{
-    signInBtn.classList.add('ClickColor');
-    signInBtn.classList.remove('nanClickColor');
+    signInBtn.classList.add('clickColor');
+    signInBtn.classList.remove('nanclickColor');
 });
 signInBtn.addEventListener('mouseup', (event) =>{
-    signInBtn.classList.remove('ClickColor');
-    signInBtn.classList.add('nanClickColor');
+    signInBtn.classList.remove('clickColor');
+    signInBtn.classList.add('nanclickColor');
 });
 signInBtn.addEventListener('mouseout', (event) =>{
-    signInBtn.classList.remove('ClickColor');   
-    signInBtn.classList.add('nanClickColor');
+    signInBtn.classList.remove('clickColor');   
+    signInBtn.classList.add('nanclickColor');
 });
 
 // on click anotherLang to Change the language
@@ -215,6 +219,23 @@ anotherLangTxt.addEventListener('click', (event) =>{
     let temp = anotherlanguagePage;
     anotherlanguagePage = languagePage;
     languagePage = temp;
-    
+    rf(document.querySelector("#root"),LanguageTxet[languagePage].position);
     changeTheLanguage(languagePage);
 });
+
+
+
+// add the shadow from the search bar
+const rf = (elements,po ) => {
+    if(po=="right"){
+        document.querySelector("html").lang = languagePage;
+        elements.classList.add('right');
+        elements.classList.remove('left');
+    }else{
+        document.querySelector("html").lang = languagePage;
+        elements.classList.add('left');
+        elements.classList.remove('right');
+    }
+    
+};
+

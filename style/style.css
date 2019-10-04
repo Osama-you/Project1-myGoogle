@@ -7,6 +7,8 @@ body{
     color: #222;
     font-size: small;
     font-size: 13px;
+    /* font-family: HelveticaNeue,'Noto Naskh Arabic UI',Arial,sans-serif; */
+    font-family: HelveticaNeue,'Noto Naskh Arabic UI',Arial,sans-serif;
 }
 
 #root{
@@ -30,35 +32,83 @@ body{
 }
 
 .headerContents{
-    float: right;
     display: flex;
     padding: 0 30px;
-    text-align: left;
     align-items: center;
     justify-content: flex-end;
     -webkit-justify-content: flex-end;    
+}
+
+.left .header .headerContents{
+    float: left;
+    text-align: left;
+}
+
+.right .header .headerContents{
+    float: right;
+    text-align: right;
 }
 
 .headerContents div{    
     display: flex;
 }
 
-.headerContents .leftSide {
-    padding-right: 15px;
-}
-
-.leftSide a{
+.secondSide a{
     color: rgba(0,0,0,0.87);
     text-decoration: none;
     line-height: 24px;
 }
 
-.leftSide a:hover{
+.secondSide a:hover{
     color: rgba(0,0,0,0.70);
     text-decoration: underline;
 }
 
-.imagesBox{
+/* firstSide & firstSide auto position */
+.left .firstSide{
+    order:1;
+}
+.right .header .firstSide{
+    order:2;
+}
+.left .header .secondSide{
+    order:2;
+    padding-left: 15px;
+    
+}
+.right .header .secondSide{
+    order:1;
+    padding-right: 15px;
+}
+
+/* all thing in firstSide & firstSide auto position */
+.left .header .googleAppMenuBox{
+    order:2;
+}
+.right .header .googleAppMenuBox{
+    order:1;
+}
+.left .header .signInBtnBox{
+    order:1;
+    padding: 0 15px 0 0;
+    font-weight: bold;
+}
+.right .header .signInBtnBox{
+    order:2;
+    padding: 0 0 0 15px ;
+}
+.left .header .gamilBox{
+    order:2;
+}
+.right .header .gamilBox{
+    order:1;
+}
+.left .header .imagesBox{
+    order:1;
+    padding-right: 15px;
+}
+.right .header .imagesBox{
+    order:1;
     padding-left: 15px;
 }
 
@@ -79,10 +129,6 @@ body{
 
 .googleAppMenuIcon:hover{
     opacity: 0.75;
-}
-
-.signInBtnBox{
-    padding: 0 0 0 15px;
 }
 
 #signInBtn{
@@ -167,6 +213,39 @@ body{
     width: 24px;
     background-size: 24px;    
 }
+
+.right .main .searchInputBox{
+    order: 1;
+}
+
+.left .main .searchInputBox{
+    order: 2;
+}
+
+.right .main .voiceSearchBtn{
+    order: 2;
+}
+
+.left .main .voiceSearchBtn{
+    order: 1;
+}
+
+.right .main .searchIconContent{
+    order: 1;
+}
+
+.left .main .searchIconContent{
+    order: 2;
+}
+
+.right .main #searchInput{
+    order: 2;
+}
+
+.left .main #searchInput{
+    order: 1;
+}
+
 
 .btnGroup{
     top: 53px;
@@ -286,6 +365,6 @@ body{
     background: -webkit-linear-gradient(top,#4387fd,#4683ea);
 }
 
-.ClickColor{
+.clickColor{
     background: #376fcaea;
 }
