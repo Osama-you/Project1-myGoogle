@@ -108,7 +108,7 @@ body{
     padding-right: 15px;
 }
 .right .header .imagesBox{
-    order:1;
+    order:2;
     padding-left: 15px;
 }
 
@@ -159,7 +159,8 @@ body{
     display: flex;    
     width: 100%;
     height:44px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
+    /* margin-left: -7px; */
     background: #fff;
     border-radius: 24px;
     border: 1px solid ;  
@@ -176,6 +177,9 @@ body{
     font: 16px arial,sans-serif;
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
+}
+.keyboardANDvoiceSearch{
+    display: flex;
 }
 
 .searchIconContent{
@@ -205,6 +209,8 @@ body{
     padding: 0 16px 0 8px;
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
+    order: 2;
+    
 }
 
 #voiceSearchIcon{
@@ -214,20 +220,53 @@ body{
     background-size: 24px;    
 }
 
+
+.keyboardArBtn{
+    border: 0;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 8px 0 8px;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    order: 1;
+}
+
+#keyboardArIcon{
+    background-image: url(../resources/images/icon/keyboardAr.png);
+    height: 24px;
+    width: 24px;
+    background-size: 24px;    
+   
+        /* visibility: hidden; */
+}
+
 .right .main .searchInputBox{
     order: 1;
 }
 
 .left .main .searchInputBox{
+    padding: 6px 0px 0 0px;
     order: 2;
 }
 
-.right .main .voiceSearchBtn{
+.right .main .keyboardANDvoiceSearch{
+    order: 2;
+}
+
+.left .main .keyboardANDvoiceSearch{
+    padding: 0 0 0 12px;
+    order: 1;
+}
+
+.keyboardArBtn{
     order: 2;
 }
 
 .left .main .voiceSearchBtn{
     order: 1;
+    padding: 0 8px 0 4px;
+
 }
 
 .right .main .searchIconContent{
@@ -235,6 +274,7 @@ body{
 }
 
 .left .main .searchIconContent{
+    padding-right: 14px;
     order: 2;
 }
 
@@ -243,9 +283,17 @@ body{
 }
 
 .left .main #searchInput{
+    margin-right: 13px;
     order: 1;
 }
 
+.right .main .searchBar{
+    margin-left: 5px;
+}
+
+.left .main .searchBar{
+    margin-left: -7px;
+}
 
 .btnGroup{
     top: 53px;
