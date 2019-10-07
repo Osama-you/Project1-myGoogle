@@ -1,14 +1,19 @@
 /* 
  * Define The Elements 
  */
-
-const footerBarLeft = document.querySelector("#footerBarLeft");
-const footerBarRight = document.querySelector("#footerBarRight");
+const _HTML = document.querySelector("html");
+const root = document.querySelector("#root");
+const footerBarSecond = document.querySelector("#footerBarSecond");
+const footerBarFirst = document.querySelector("#footerBarFirst");
 const googleSearchBtn = document.querySelector("#googleSearchBtn");
 const feelingLuckyBtn = document.querySelector("#feelingLuckyBtn");
 const searchbar = document.querySelector('.searchBar');
 const body = document.querySelector("body");
 const searchInput = document.querySelector("#searchInput");
+const keyboardANDvoiceSearch = document.querySelector(".keyboardANDvoiceSearch");
+const btnGroup = document.querySelector(".btnGroup");
+const locationBar = document.querySelector(".locationBar");
+const languageChange = document.querySelector(".languageChange");
 
 // Define all the texts
 const ElementsTxt=[];
@@ -27,19 +32,19 @@ const anotherLangTxt = document.querySelector("#theLanguage");
 ElementsTxt.push(anotherLangTxt);
 const locationTxt = document.querySelector("#locationName");
 ElementsTxt.push(locationTxt);
-const advertisingTxt = footerBarRight.children[0];
+const advertisingTxt = footerBarFirst.children[0];
 ElementsTxt.push(advertisingTxt);
-const businessTxt = footerBarRight.children[1];
+const businessTxt = footerBarFirst.children[1];
 ElementsTxt.push(businessTxt);
-const aboutTxt = footerBarRight.children[2];
+const aboutTxt = footerBarFirst.children[2];
 ElementsTxt.push(aboutTxt);
-const howSearchWorksTxt = footerBarRight.children[3];
+const howSearchWorksTxt = footerBarFirst.children[3];
 ElementsTxt.push(howSearchWorksTxt);
-const privacyTxt = footerBarLeft.children[0];
+const privacyTxt = footerBarSecond.children[0];
 ElementsTxt.push(privacyTxt);
-const termsTxt = footerBarLeft.children[1];
+const termsTxt = footerBarSecond.children[1];
 ElementsTxt.push(termsTxt);
-const settingsTxt = footerBarLeft.children[2];   
+const settingsTxt = footerBarSecond.children[2];   
 ElementsTxt.push(settingsTxt);  
 
 /*
@@ -73,7 +78,7 @@ const LanguageTxet = {
         signIn: "تسجيل الدخول",
         googleSearch: "بحت Google ",
         feelingLucky: "ضربة حظ",
-        googleOfferedIn: " Google offered in:",// <a id=\"theLanguage\" href=\"#\">11111</a>",
+        googleOfferedIn: " محرّك بحث Google متوفّر باللغة:",// <a id=\"theLanguage\" href=\"#\">11111</a>",
         anotherLang: "", // the anather Language 
         location: "",
         advertising: "الإعلانات",
@@ -219,22 +224,57 @@ anotherLangTxt.addEventListener('click', (event) =>{
     let temp = anotherlanguagePage;
     anotherlanguagePage = languagePage;
     languagePage = temp;
-    rf(document.querySelector("#root"),LanguageTxet[languagePage].position);
+    changeTheDir(LanguageTxet[languagePage].position);
     changeTheLanguage(languagePage);
 });
 
 
+// chang the dir fot the page
+var keyboardArBtn = document.createElement("div");  
+var keyboardArIcon = document.createElement("span"); 
+const changeTheDir = (dir) => {
+    if(dir == "right"){
+        _HTML.lang = languagePage;
+        //
+        root.classList.add('right');
+        root.classList.remove('left');
+        //
+        searchInput.dir="ltl";
+        btnGroup.dir="ltl";
+        locationBar.dir="ltl";
+        btnGroup.dir="ltl   ";
+        locationBar.dir="ltl";
+        footerBarFirst.dir="ltl";       
+        footerBarSecond.dir="ltl";     
+        languageChange.dir="ltl";  
+        //
+        keyboardArBtn.parentNode.removeChild(keyboardArBtn);
+        //
 
-// add the shadow from the search bar
-const rf = (elements,po ) => {
-    if(po=="right"){
-        document.querySelector("html").lang = languagePage;
-        elements.classList.add('right');
-        elements.classList.remove('left');
     }else{
-        document.querySelector("html").lang = languagePage;
-        elements.classList.add('left');
-        elements.classList.remove('right');
+        _HTML.lang = languagePage;
+        //
+        root.classList.add('left');
+        root.classList.remove('right');
+        //
+        searchInput.dir="rtl";
+        btnGroup.dir="rtl";
+        locationBar.dir="rtl";
+        btnGroup.dir="rtl";
+        locationBar.dir="rtl";
+        footerBarFirst.dir="rtl";       
+        footerBarSecond.dir="rtl";    
+        languageChange.dir="rtl";    
+        //
+        keyboardArBtn.classList.add('keyboardArBtn');
+        keyboardArBtn.setAttribute('aria-label', 'keyboard');
+       
+        keyboardArIcon.id = "keyboardArIcon";
+
+        keyboardArBtn.appendChild(keyboardArIcon);
+        keyboardANDvoiceSearch.appendChild(keyboardArBtn);
+        //
+        
     }
     
 };

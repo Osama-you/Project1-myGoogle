@@ -237,8 +237,7 @@ body{
     height: 24px;
     width: 24px;
     background-size: 24px;    
-   
-        /* visibility: hidden; */
+    /* visibility: hidden; */
 }
 
 .right .main .searchInputBox{
@@ -356,18 +355,26 @@ body{
 
 #locationName{
     font-size: 15px;
-    margin-left: 30px;
+    
     padding-left: 27px;
     text-align: left;
     color: rgba(0,0,0,.54);
 }
 
-#footerBarRight{
+.right .footer #locationName{
     margin-left: 30px;
+}
+
+.left .footer #locationName{
+    margin-right: 30px;
+}
+
+#footerBarFirst{
+   
     white-space: nowrap;
 }
 
-#footerBarRight a{
+#footerBarFirst a{
     display: inline-block;
     color: #5f6368;
     padding-left: 23.4px;
@@ -375,14 +382,12 @@ body{
     text-decoration: none;
 }
 
-#footerBarLeft{
-    margin-right: 30px;
-    float: right;
+#footerBarSecond{
     white-space: nowrap;
     font-size: small;
 }
 
-#footerBarLeft a{
+#footerBarSecond a{
     display: inline-block;
     color: #5f6368;
     padding-left: 23.3px;
@@ -390,13 +395,30 @@ body{
     text-decoration: none;
 }
 
-#footerBarRight a:hover{
+#footerBarFirst a:hover{
     text-decoration: underline;
 }
 
-#footerBarLeft a:hover{
+#footerBarSecond a:hover{
     text-decoration: underline;
 }
+
+.right .footer #footerBarFirst{
+    margin-left: 30px;
+}
+.left .footer #footerBarFirst{
+    margin-right: 30px;
+    float: right;
+}
+.right .footer #footerBarSecond{
+    margin-right: 30px;
+    float: right;
+}
+.left .footer #footerBarSecond{
+    margin-left: 30px;
+}
+
+
 
 .noneShadow{
     box-shadow:none;
