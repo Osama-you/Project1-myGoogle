@@ -1,3 +1,4 @@
+
 body{
     height: 100%;
     margin: 0;
@@ -7,8 +8,6 @@ body{
     color: #222;
     font-size: small;
     font-size: 13px;
-    /* font-family: HelveticaNeue,'Noto Naskh Arabic UI',Arial,sans-serif; */
-    font-family: HelveticaNeue,'Noto Naskh Arabic UI',Arial,sans-serif;
 }
 
 #root{
@@ -233,11 +232,10 @@ body{
 }
 
 #keyboardArIcon{
-    background-image: url(../resources/images/icon/keyboardAr.png);
+    background: url(../resources/images/icon/keyboardAr2.png) no-repeat center ;
     height: 24px;
     width: 24px;
-    background-size: 24px;    
-    /* visibility: hidden; */
+    background-size: 19px;    
 }
 
 .right .main .searchInputBox{
@@ -287,11 +285,11 @@ body{
 }
 
 .right .main .searchBar{
-    margin-left: 5px;
+    margin-left: -1px;
 }
 
 .left .main .searchBar{
-    margin-left: -7px;
+    margin-left: -1px;
 }
 
 .btnGroup{
@@ -300,6 +298,14 @@ body{
     height: 70px;
     text-align: center;
     padding: 14px 0 0;
+
+}
+.right .main .btnGroup{
+    margin-left: -6px;
+}
+
+.left .main .btnGroup{
+    margin-left: 8px;
 }
 
 .btnGroup input{
@@ -417,8 +423,6 @@ body{
 .left .footer #footerBarSecond{
     margin-left: 30px;
 }
-
-
 
 .noneShadow{
     box-shadow:none;

@@ -59,7 +59,7 @@ const LanguageTxet = {
         signIn: "Sign in",
         googleSearch: "Google Search",
         feelingLucky: "I'm Feeling Lucky",
-        googleOfferedIn: " Google offered in:",// <span id=\"theLanguage\" >11111111</span>",
+        googleOfferedIn: " Google offered in:",
         anotherLang: "", // the another Language 
         location: "",
         advertising: " Advertising",
@@ -78,7 +78,7 @@ const LanguageTxet = {
         signIn: "تسجيل الدخول",
         googleSearch: "بحت Google ",
         feelingLucky: "ضربة حظ",
-        googleOfferedIn: " محرّك بحث Google متوفّر باللغة:",// <a id=\"theLanguage\" href=\"#\">11111</a>",
+        googleOfferedIn: " محرّك بحث Google متوفّر باللغة:",
         anotherLang: "", // the anather Language 
         location: "",
         advertising: "الإعلانات",
